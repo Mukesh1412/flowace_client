@@ -1,0 +1,31 @@
+<div class="container-scroller">
+  <app-navbar></app-navbar>
+  <div class="container-fluid page-body-wrapper">
+    <app-sidebar></app-sidebar>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-md-3" *ngFor="let item of products;let i=index;">
+            <figure class="card card-product">
+              <div class="img-wrap">
+                <img src="../../assets/images/products/{{item.product_name}}.jpeg">
+
+              </div>
+              <figcaption class="info-wrap">
+                <h6 class="title text-dots"><a>{{item.view_name}}</a></h6>
+                <div class="action-wrap">
+                  <a class="btn btn-primary btn-sm float-right" (click)="buyNow(item)"> Buy Now </a>
+                  <div class="price-wrap h5">
+                    <span class="price-new">₹{{item.current_price}}</span>
+                    <del class="price-old">₹{{item.old_price}}</del>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>
